@@ -26,7 +26,7 @@
 | **NP-ML** | [NumPy for MATLAB users](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) | Tabla de equivalencias MATLAB → NumPy |
 | **SPL** | [Scientific Python Lectures](https://lectures.scientific-python.org/) | NumPy, matplotlib, SciPy, optimización y rendimiento |
 
-Las secciones del tutorial y de SPL se citan por nombre porque la numeración puede cambiar entre versiones.
+Enlaces a cada capítulo, qué usar en cada módulo y PDF para leer sin conexión: ver [`RECURSOS.md`](RECURSOS.md).
 
 ## Calendario orientativo (~6–8 h/semana, ~15 semanas)
 
@@ -51,7 +51,7 @@ Las secciones del tutorial y de SPL se citan por nombre porque la numeración pu
 
 **Objetivo:** tener un entorno profesional desde el primer día.
 
-- Instalar la última versión estable de Python (3.13 o superior) y VS Code con la extensión de Python.
+- Instalar la última versión estable de Python (3.14 en septiembre de 2026) y VS Code con la extensión de Python.
 - Clonar este repositorio y crear un entorno virtual (`venv`). Entender por qué no se instala todo a nivel global.
 - `pip install -r requirements.txt` y ejecutar los tests del M1 (deben fallar).
 - Usar el intérprete interactivo (REPL) como calculadora y banco de pruebas: el equivalente a la
@@ -94,7 +94,7 @@ Las secciones del tutorial y de SPL se citan por nombre porque la numeración pu
 - Funciones como objetos de primera clase (pasarlas como argumento: el `@(x)` de MATLAB).
 - Anotaciones de tipo (*type hints*) básicas.
 
-**Lecturas:** TUT "Definiendo funciones" y "Más sobre definición de funciones". SPL "The Python language",
+**Lecturas:** TUT 4.8 "Definir funciones", 4.9 "Más sobre definición de funciones" y 9.1–9.2 (nombres, objetos y ámbitos). SPL "The Python language",
 apartados de funciones.
 
 **Entregable:** ejercicios de M2 más una explicación escrita de por qué falla el argumento mutable por defecto.

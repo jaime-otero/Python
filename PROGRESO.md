@@ -34,3 +34,5 @@ Errores o conceptos que han costado y conviene repasar:
 - Diagnóstico: sabe C++ y MATLAB; tiene JS/HTML oxidados. Motivación: Python es el lenguaje más usado
   y quiere cubrir por su cuenta la asignatura Computación Avanzada.
 - Se crean el plan (`PLAN.md`), la chuleta C++/MATLAB → Python y los ejercicios de M1.
+- Se verifican los cuatro recursos contra sus webs y se añaden `RECURSOS.md` (enlaces por capítulo
+  y módulo) y los PDF en `recursos/`.

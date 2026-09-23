@@ -10,6 +10,8 @@ matplotlib) y llegar preparado a la asignatura **Computación Avanzada**.
 |---|---|
 | [`PLAN.md`](PLAN.md) | El plan completo por módulos: objetivos, lecturas, trampas típicas y entregables |
 | [`PROGRESO.md`](PROGRESO.md) | Dónde estás, qué está hecho y qué toca en la siguiente sesión |
+| [`RECURSOS.md`](RECURSOS.md) | Los cursos y documentación del plan: enlaces por capítulo y qué usar en cada módulo |
+| [`recursos/`](recursos/) | Los recursos en PDF para leer sin conexión |
 | [`apuntes/`](apuntes/) | Chuletas y resúmenes (empieza por la de C++/MATLAB → Python) |
 | [`modulos/`](modulos/) | Un directorio por módulo con teoría breve, ejercicios y tests |
 | `CLAUDE.md` | Instrucciones para Claude como tutor (cómo llevar las sesiones) |
