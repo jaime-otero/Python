@@ -9,6 +9,14 @@ Sabe C++ y MATLAB y tiene JavaScript y HTML oxidados. Quiere dominar Python gene
 y cubrir por su cuenta la asignatura universitaria **Computación Avanzada**.
 Aprende por su cuenta: nadie le pone nota en este repositorio.
 
+## Código previo del estudiante
+
+`codigo_previo/cpp/` contiene sus prácticas de métodos numéricos en C++ (catálogo en
+`codigo_previo/README.md`). Úsalas como material: el estudiante las traduce a Python en los módulos
+indicados en `PLAN.md`. Los "retos de depuración" del README se resuelven con pistas, **nunca dando
+la respuesta**. Los hábitos que hay que corregir están en `apuntes/02_de_tu_cpp_a_python.md`: vigílalos
+en las revisiones.
+
 ## Al empezar cada sesión
 
 1. Leer `PROGRESO.md` (dónde estamos) y la sección del módulo actual en `PLAN.md`.

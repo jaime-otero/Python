@@ -4,6 +4,11 @@
 
 - **Sabe programar:** C++ (tipos, memoria, POO) y MATLAB (cálculo vectorizado, gráficas).
 - **Oxidado:** JavaScript y HTML (no son necesarios para este plan).
+- **Ya ha cursado métodos numéricos en C++** (ver [`codigo_previo/`](codigo_previo/)): raíces
+  (Newton, bisección, secante, Newton para sistemas), sistemas lineales (LU, Thomas, Jacobi,
+  Gauss-Seidel), autovalores (Jacobi), cuadratura (trapecio, Simpson, Gauss-Legendre), derivación
+  numérica, EDOs (Euler, RK2, RK4), disparo y diferencias finitas. Los hábitos de C++ que hay que
+  cambiar están en [`apuntes/02_de_tu_cpp_a_python.md`](apuntes/02_de_tu_cpp_a_python.md).
 - **Objetivos:**
   1. Dominar Python como lenguaje general, escrito "a la manera de Python" y no como C++ traducido.
   2. Dominar el Python científico (NumPy, SciPy, matplotlib) como sustituto de MATLAB.
@@ -109,8 +114,9 @@ apartados de funciones.
 
 **Lecturas:** TUT "Módulos", "Entrada y salida" y "Errores y excepciones". CS50P lecciones 3, 4 y 6.
 
-**Entregable:** un pequeño programa de línea de comandos que lea un CSV de datos, calcule estadísticas y
-escriba un JSON, con manejo de errores.
+**Entregable:** un programa de línea de comandos que lea un fichero de datos en columnas (como el
+`posiciones.txt` de tu `practica14.cpp`), calcule estadísticas y escriba un JSON, con manejo de errores
+mediante excepciones (nada de `exit(1)`).
 
 ## M4 · Programación orientada a objetos pythónica
 
@@ -124,7 +130,9 @@ escriba un JSON, con manejo de errores.
 
 **Lecturas:** TUT "Clases". CS50P lección 8.
 
-**Entregable:** una clase `Vector` (o `Polinomio`) con sus operadores, más sus tests.
+**Entregable:** una clase `Matriz` mínima al estilo de tu `techsoft::matrix`: `M[i, j]`, `+`, `-`,
+`*` por escalar, `@` para el producto y `__repr__`. Después, comparar su velocidad con NumPy en un
+producto 200×200. Así se entiende por qué nadie escribe su propia clase de matrices en Python.
 
 ## M5 · Herramientas profesionales
 
@@ -151,7 +159,13 @@ escriba un JSON, con manejo de errores.
 **Lecturas:** NP-ML completo. SPL "NumPy: creating and manipulating numerical data" y después
 "Advanced NumPy" (solo la parte de *strides* y vistas).
 
-**Entregable:** reimplementar con NumPy vectorizado varios ejercicios de M1, midiendo la mejora de tiempo.
+**Entregable:** traducir a NumPy, **sin bucles**, partes de tus prácticas (ver `codigo_previo/README.md`):
+- `reordenar_matriz.cpp`: comprobar diagonal dominante en una línea.
+- `crear_matriz_tridiagonal.cpp` y `crear_matrix.cpp`: construir las matrices con `np.diag`,
+  `np.eye` y *broadcasting*, y guardarlas con `np.savetxt`.
+- `practica14.cpp`: derivadas numéricas con slicing y compararlas con `np.gradient`.
+- `jacobi.cpp`: una iteración de Jacobi como una sola expresión vectorizada.
+- `ejercicio1_final.cpp`: la curva de Debye para todas las temperaturas a la vez.
 
 ## M7 · Visualización con matplotlib
 
@@ -166,18 +180,27 @@ escriba un JSON, con manejo de errores.
 
 ## M8 · SciPy y métodos numéricos
 
-Primero se implementa a mano y después se compara con SciPy.
+Los métodos ya los conoces de tus prácticas de C++. Aquí se trata de **portarlos a Python bien
+hechos** (sin duplicados, con tests) y compararlos con SciPy, que es lo que se usa en la práctica.
 
-- Raíces: bisección y Newton, frente a `scipy.optimize.root_scalar`/`root`.
-- EDOs: Euler y RK4, frente a `scipy.integrate.solve_ivp`.
-- Integración numérica: trapecios y Simpson, frente a `scipy.integrate.quad`.
-- Interpolación y ajuste: `scipy.interpolate`, `scipy.optimize.curve_fit`.
-- Optimización: `scipy.optimize.minimize`.
-- Álgebra lineal dispersa (`scipy.sparse`) y FFT (`scipy.fft`).
+- Raíces (`raices.cpp`, `practica6.cpp`, `Newton_raphson.cpp`), frente a `scipy.optimize.root_scalar`/`root`.
+- Sistemas lineales (`practica7.cpp`, `Practica_8.cpp`, `practica_10.cpp`), frente a
+  `scipy.linalg.lu_factor`/`lu_solve` y `solve_banded`.
+- Autovalores (`practica_11.cpp`), frente a `np.linalg.eigh`.
+- Cuadratura (`practica_12.cpp`, `practica13.cpp`), frente a `scipy.integrate.quad`,
+  `scipy.special.ellipk` y `np.polynomial.legendre.leggauss`.
+- EDOs (`Practica15.cpp` a `practica17.cpp`), frente a `scipy.integrate.solve_ivp`.
+- Problemas de contorno (`practica18.cpp`, `practica19.cpp`), frente a `scipy.integrate.solve_bvp`.
+- **Nuevo** (no está en tus prácticas): interpolación y ajuste (`scipy.interpolate`,
+  `scipy.optimize.curve_fit`), optimización (`scipy.optimize.minimize`), matrices dispersas
+  (`scipy.sparse`) y FFT (`scipy.fft`).
+- Mientras traduces, resuelve los **retos de depuración** de `codigo_previo/README.md`.
 
 **Lecturas:** SPL "SciPy: high-level scientific computing" y "Mathematical optimization".
 
-**Entregable:** una mini-biblioteca `metodos_numericos/` con tests y gráficas de convergencia.
+**Entregable:** un paquete `metodos_numericos/` (`raices.py`, `lineal.py`, `integracion.py`,
+`edo.py`) que reúna tus prácticas, con tests que comparen cada método con SciPy y gráficas de
+convergencia (error frente a paso o frente a tolerancia, como en `practica6.cpp`).
 
 ## M9 · Python avanzado
 
@@ -199,12 +222,16 @@ Primero se implementa a mano y después se compara con SciPy.
 
 **Lecturas:** SPL "Optimizing code".
 
-**Entregable:** optimizar un código lento del M8 y documentar la aceleración medida.
+**Entregable:** rehacer `practica_10.cpp` en Python (LU general frente a Thomas para n = 1000) en
+cuatro versiones: Python puro, NumPy, `numba` y `scipy.linalg.solve_banded`. Medirlas y compararlas
+con tu versión en C++. Opcional: llamar a tu Thomas de C++ desde Python con `pybind11`.
 
 ## M11 · Proyecto final
 
 Proyecto de 2 semanas, elegido según el temario de Computación Avanzada. Ideas:
 
+- **Péndulo doble** (a partir de `ejercicio2_final.cpp`): animación, conservación de la energía,
+  sensibilidad a las condiciones iniciales (caos) y comparación de RK4 con `solve_ivp`.
 - Simulación de N cuerpos (integradores, conservación de energía, animación).
 - Ecuación del calor o de ondas por diferencias finitas (matrices dispersas, estabilidad).
 - Monte Carlo: modelo de Ising o integración en dimensión alta.

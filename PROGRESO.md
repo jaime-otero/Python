@@ -24,9 +24,13 @@
 
 ## Puntos a vigilar
 
-Errores o conceptos que han costado y conviene repasar:
+Hábitos de C++ detectados en `codigo_previo/` (detalle en `apuntes/02_de_tu_cpp_a_python.md`):
 
-- *(vacío por ahora)*
+- Devuelve resultados por referencia (`double &x`) en lugar de devolverlos: en Python, tuplas.
+- Copia y pega funciones entre programas: en Python, módulos e `import`.
+- Bucles con índices y vectores `n×1`: en Python, NumPy vectorizado y arrays 1-D.
+- Variables globales mutables y bloques casi repetidos que solo cambian un valor.
+- Contadores `double` en bucles (`t += h`), errores con `cout` + `exit(1)` y recursión profunda.
 
 ## Registro de sesiones
 
@@ -36,3 +40,8 @@ Errores o conceptos que han costado y conviene repasar:
 - Se crean el plan (`PLAN.md`), la chuleta C++/MATLAB → Python y los ejercicios de M1.
 - Se verifican los cuatro recursos contra sus webs y se añaden `RECURSOS.md` (enlaces por capítulo
   y módulo) y los PDF en `recursos/`.
+- Sube 23 prácticas de métodos numéricos en C++ del curso pasado. Se organizan en `codigo_previo/cpp/`,
+  con catálogo y retos de depuración en `codigo_previo/README.md`, y se escribe el diagnóstico de
+  hábitos (`apuntes/02_de_tu_cpp_a_python.md`). El plan se personaliza: M3, M4, M6, M8, M10 y M11
+  usan sus prácticas, y M8 pasa de enseñar los métodos a portarlos y compararlos con SciPy.
+- Pendiente: subir los ficheros de datos que usan las prácticas (`matriz.txt`, `posiciones.txt`).
