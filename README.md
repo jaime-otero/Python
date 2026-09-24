@@ -31,11 +31,17 @@ matplotlib) y llegar preparado a la asignatura **Computación Avanzada**.
 
 ## Ejecutar los tests
 
-```bash
+En Windows, desde PowerShell en la carpeta del repositorio:
+
+```powershell
 python -m venv .venv                 # crea un entorno virtual (solo la primera vez)
-source .venv/bin/activate            # Linux/macOS  |  Windows: .venv\Scripts\activate
+.venv\Scripts\Activate.ps1           # activa el entorno: verás (.venv) al principio de la línea
 pip install -r requirements.txt
 python -m pytest modulos/m01_fundamentos -v
 ```
+
+Si PowerShell dice que "la ejecución de scripts está deshabilitada", ejecuta una sola vez
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` y vuelve a activar el entorno.
+En Linux o macOS, el entorno se activa con `source .venv/bin/activate`.
 
 Al principio todos los tests fallan (`NotImplementedError`): es lo esperado.

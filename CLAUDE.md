@@ -9,6 +9,10 @@ Sabe C++ y MATLAB y tiene JavaScript y HTML oxidados. Quiere dominar Python gene
 y cubrir por su cuenta la asignatura universitaria **Computación Avanzada**.
 Aprende por su cuenta: nadie le pone nota en este repositorio.
 
+**Usa Windows.** Da siempre las instrucciones para Windows: comandos de PowerShell, rutas con `\`,
+entorno virtual con `.venv\Scripts\Activate.ps1`. Si `python` no responde, prueba con el lanzador `py`.
+En VS Code, la terminal por defecto es PowerShell.
+
 ## Código previo del estudiante
 
 `codigo_previo/cpp/` contiene sus prácticas de métodos numéricos en C++ (catálogo en
